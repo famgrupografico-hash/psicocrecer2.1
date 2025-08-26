@@ -1,0 +1,300 @@
+<!doctype html>
+
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Clínica de Psicología — Nombre de la Clínica</title>
+  <!--
+    Plantilla HTML/CSS minimalista, responsiva y compatible con Adobe Dreamweaver CS5.
+    Instrucciones rápidas:
+    - Reemplaza /assets/logo.svg por tu logo (archivo SVG o PNG). Mantén el mismo id="logo" si quieres conservar estilos.
+    - Reemplaza imágenes en /assets/ (hero.jpg, service1.jpg, blog1.jpg, etc.).
+    - Edita texto directamente en el HTML o en Dreamweaver en la vista Diseño/Código.
+    - Para que el formulario funcione, cambia el atributo action del <form> a tu script servidor (PHP, Formspree, etc.).
+    Estructura de carpetas recomendada:
+      /index.html  (este archivo)
+      /assets/
+        logo.svg
+        hero.jpg
+        service1.jpg
+        service2.jpg
+        service3.jpg
+        blog1.jpg
+        map-placeholder.jpg
+  -->
+  <style>
+    /* Paleta: verdes (#A8D5BA, #DFF5E1) y celestes (#AEE1F9, #E0F7FF) */
+    :root{
+      --verde-1:#A8D5BA;
+      --verde-2:#DFF5E1;
+      --celeste-1:#AEE1F9;
+      --celeste-2:#E0F7FF;
+      --gris:#4a4a4a;
+      --blanco:#ffffff;
+      --radio:14px;
+      --max-width:1100px;
+      --transition:0.25s ease;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }/* Reset suave */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body {height:100%}
+body{color:var(--gris);background:linear-gradient(180deg,var(--verde-2) 0%, #ffffff 100%);line-height:1.5}
+
+.container{max-width:var(--max-width);margin:0 auto;padding:24px}
+
+header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+/* Logo (editable) */
+.brand{display:flex;align-items:center;gap:12px}
+.brand img, .brand svg{height:56px;width:auto}
+.brand h1{font-size:1rem;color:var(--gris);letter-spacing:0.4px}
+
+nav ul{list-style:none;display:flex;gap:18px;align-items:center}
+nav a{color:var(--gris);text-decoration:none;padding:6px 10px;border-radius:8px;transition:background var(--transition)}
+nav a:hover{background:var(--verde-1);color:#fff}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:28px 0}
+.hero .intro h2{font-size:2rem;margin-bottom:12px}
+.hero .intro p{color:#555;margin-bottom:18px}
+.cta{display:inline-block;padding:10px 16px;border-radius:10px;background:var(--celeste-1);color:#033; text-decoration:none}
+.hero img{width:100%;border-radius:var(--radio);box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+
+/* Servicios */
+.services{padding:28px 0}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.service{background:var(--blanco);padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,0.04)}
+.service .icon{height:56px;width:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.service h3{margin-bottom:8px}
+.service p{font-size:.95rem;color:#666}
+
+/* Contacto y formulario */
+.contact{display:grid;grid-template-columns:1fr 420px;gap:18px;padding:28px 0}
+form{background:var(--blanco);padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,0.04)}
+label{display:block;font-size:.9rem;margin:8px 0 6px}
+input[type=text],input[type=email],textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd}
+textarea{min-height:120px}
+button[type=submit]{margin-top:10px;padding:10px 14px;border-radius:10px;border:0;background:var(--verde-1);color:#fff;cursor:pointer}
+
+.map{border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,0.06)}
+.contacts-list{background:var(--blanco);padding:12px;border-radius:12px;border:1px solid rgba(0,0,0,0.04)}
+
+/* Blog */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:18px 0}
+.post{background:var(--blanco);border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,0.04)}
+.post img{width:100%;height:160px;object-fit:cover}
+.post .meta{padding:12px}
+
+/* Footer */
+footer{padding:22px 0;color:#666;font-size:.9rem}
+
+/* Responsive */
+@media (max-width:980px){
+  .hero,.contact{grid-template-columns:1fr}
+  .services-grid,.blog-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  nav ul{display:none}
+  .mobile-nav{display:flex}
+  .services-grid,.blog-grid{grid-template-columns:1fr}
+  .brand img{height:48px}
+}
+
+/* Small utilities */
+.muted{color:#73817a;font-size:.95rem}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <!-- Logo editable: sustituye por tu SVG o IMG manteniendo el id="logo" antes de publicar -->
+        <img src="logo fondo blanco psi-02.png" alt="Logo Clínica" width="358" height="175" id="logo">
+        <div>
+          <h1>Clínica Bienestar</h1>
+          <div class="muted">Psicología · Terapia · Bienestar emocional</div>
+        </div>
+      </div><nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#acerca">Acerca</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#blog">Blog</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="inicio" class="hero">
+  <div class="intro">
+    <h2>Atención psicológica cercana, profesional y basada en evidencia</h2>
+    <p>Sesiones individuales, de pareja y familiar. Planes personalizados para el bienestar emocional y herramientas prácticas para la vida diaria.</p>
+    <a class="cta" href="#contacto">Solicitar cita</a>
+  </div>
+  <div>
+    <img src="Hip.png" alt="Sesión de terapia / bienestar">
+  </div>
+</section>
+
+<!-- ACERCA -->
+<section id="acerca">
+  <h3>Acerca de la clínica</h3>
+  <p class="muted">Somos un equipo de psicólogos clínicos con formación en terapia cognitivo-conductual, terapia de pareja y terapia familiar. Nuestro enfoque es cálido, ético y centrado en el paciente.</p>
+  <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap">
+    <div style="flex:1;min-width:220px;background:var(--blanco);padding:14px;border-radius:12px;border:1px solid rgba(0,0,0,0.04)">
+      <strong>Misión</strong>
+      <p class="muted">Contribuir al bienestar emocional y a la mejora en la calidad de vida de nuestros pacientes.</p>
+    </div>
+    <div style="flex:1;min-width:220px;background:var(--blanco);padding:14px;border-radius:12px;border:1px solid rgba(0,0,0,0.04)">
+      <strong>Visión</strong>
+      <p class="muted">Ser un referente local en servicios psicológicos integrales y compasivos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="services">
+  <h3>Servicios</h3>
+  <div class="services-grid">
+    <!-- Servicio 1 -->
+    <article class="service">
+      <div class="icon" aria-hidden="true" style="background:var(--verde-1)">
+        <!-- icono SVG simple (editable) -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" fill="#fff"/>
+          <path d="M20 21v-1c0-2.76-2.24-5-5-5H9c-2.76 0-5 2.24-5 5v1" fill="#fff"/>
+        </svg>
+      </div>
+      <h3>Terapia individual</h3>
+      <p>Atención personalizada para ansiedad, depresión, estrés y mejora del afrontamiento emocional.</p>
+    </article>
+
+    <!-- Servicio 2 -->
+    <article class="service">
+      <div class="icon" aria-hidden="true" style="background:var(--celeste-1)">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2l3 6 6 .5-4.5 4 1 6L12 16l-5.5 3.5 1-6L3 8.5 9 8 12 2z" fill="#fff"/>
+        </svg>
+      </div>
+      <h3>Terapia de pareja</h3>
+      <p>Intervenciones para mejorar la comunicación, resolución de conflictos y fortalecimiento relacional.</p>
+    </article>
+
+    <!-- Servicio 3 -->
+    <article class="service">
+      <div class="icon" aria-hidden="true" style="background:linear-gradient(180deg,var(--verde-2),var(--celeste-2))">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 3C7 3 3 6.13 3 10.5c0 2.89 2.06 5.33 5 6.24V21l4-2 4 2v-4.26c2.94-.91 5-3.35 5-6.24C21 6.13 17 3 12 3z" fill="#fff"/>
+        </svg>
+      </div>
+      <h3>Terapia familiar</h3>
+      <p>Espacios para fortalecer la dinámica familiar y resolver problemas interpersonales.</p>
+    </article>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="contact">
+  <div>
+    <h3>Contacto y solicitud de cita</h3>
+    <form id="contactForm" action="#" method="post">
+      <!-- Cambia el action a tu script (ej. /send.php) o servicio de terceros -->
+      <label for="name">Nombre</label>
+      <input id="name" name="name" type="text" placeholder="Tu nombre" required>
+
+      <label for="email">Correo electrónico</label>
+      <input id="email" name="email" type="email" placeholder="tu@correo.com" required>
+
+      <label for="service">Servicio</label>
+      <select id="service" name="service">
+        <option>Terapia individual</option>
+        <option>Terapia de pareja</option>
+        <option>Terapia familiar</option>
+      </select>
+
+      <label for="message">Mensaje</label>
+      <textarea id="message" name="message" placeholder="Describe brevemente tu motivo de consulta"></textarea>
+
+      <button type="submit">Enviar solicitud</button>
+    </form>
+
+    <div style="margin-top:12px" class="contacts-list">
+      <strong>Medios de contacto</strong>
+      <p class="muted">Teléfono: +506 8888-8888<br>Email: contacto@clinicabienestar.cr<br>Dirección: Calle Ejemplo 123, Ciudad</p>
+    </div>
+  </div>
+
+  <div>
+    <!-- Mapa: reemplaza el iframe por tu embed de Google Maps o utiliza una imagen local para maquetar -->
+    <div class="map" aria-hidden="true">
+      <!-- Si no tienes clave, deja una imagen placeholder en assets/map-placeholder.jpg -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.919513504481!2d-122.08424968469245!3d37.42206597982524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb0b8a4a4f5bd%3A0x8e0c3b1b1b1b1b1b!2sGoogleplex!5e0!3m2!1ses!2scr!4v1600000000000!5m2!1ses!2scr" width="100%" height="360" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <h3>Blog — Publicaciones destacadas</h3>
+  <div class="blog-grid">
+    <article class="post">
+      <img src="2estres.jpg" alt="Manejo del estrés">
+      <div class="meta">
+        <h4>Cómo manejar el estrés en la vida diaria</h4>
+        <p class="muted">Resumen corto del artículo. <a href="#">Leer más →</a></p>
+      </div>
+    </article>
+
+    <article class="post">
+      <img src="yoga.jpg" alt="Hábitos saludables">
+      <div class="meta">
+        <h4>Hábitos que mejoran tu bienestar emocional</h4>
+        <p class="muted">Resumen corto del artículo. <a href="#">Leer más →</a></p>
+      </div>
+    </article>
+
+    <article class="post">
+      <img src="pareja.jpg" alt="Terapia de pareja">
+      <div class="meta">
+        <h4>Cuando buscar terapia de pareja</h4>
+        <p class="muted">Resumen corto del artículo. <a href="#">Leer más →</a></p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+    <small>© <span id="year"></span> Clínica Bienestar — Todos los derechos reservados</small>
+    <div class="muted">Síguenos en redes sociales (añadir enlaces)</div>
+  </div>
+</footer>
+
+  </div>  <script>
+    // Script ligero: año automático y comportamiento del formulario
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      // En Dreamweaver CS5 puedes reemplazar esto por envío real a servidor.
+      alert('Formulario enviado (simulación). Cambia el atributo action del formulario para procesar los datos en servidor.');
+      // Opcional: limpiar campos
+      // this.reset();
+    });
+
+    // Pequeña mejora: enfatizar enlaces del menú cuando se hace scroll
+    var sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', function(){
+      var fromTop = window.scrollY + 80;
+      document.querySelectorAll('nav a').forEach(function(link){
+        var section = document.querySelector(link.getAttribute('href'));
+        if(!section) return;
+        if(section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop){
+          link.style.background = 'var(--verde-1)'; link.style.color = '#fff';
+        } else { link.style.background = 'transparent'; link.style.color = 'var(--gris)'; }
+      });
+    });
+  </script></body>
+</html>
